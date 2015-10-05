@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cassert>
 
-#if 0
+
 // NOTE: you should move this `if` down as you start solving each task
 
 void task_1()
@@ -54,7 +54,9 @@ void task_4()
 // copy arr1 to arr2
 void task_5_copy(int * arr1, int * arr2, int size)
 {
-    arr2 = arr1;
+    for(int i=0;i<size;i++){
+    	arr2[i]=arr1[i];
+    }
 }
 
 // Task 6
@@ -62,7 +64,7 @@ void task_5_copy(int * arr1, int * arr2, int size)
 void task_6_poor_copy(int * arr1, int * arr2)
 {
     // Hint: something wrong here; test this from main()
-    for(int i = 0; i < sizeof(arr2); ++i)
+    for(int i = 0; i < sizeof(arr2)/sizeof(int); ++i)
     {
         arr2[i] = arr1[i];
     }
@@ -73,10 +75,9 @@ void task_6_poor_copy(int * arr1, int * arr2)
 void task_7_print(int * arr, int size, char delim = ' ')
 {
     // Hint: something wrong here; run this from main()
-    for(int i = 0; i <= size; ++i)
+    for(int i = 0; i < size; i++)
     {
-        std::cout << a[i] << delim;
+        std::cout << arr[i] << delim;
     }
 }
 
-#endif
