@@ -11,7 +11,6 @@ using std::swap;
 // следуют элементы меньшие pivot, а в конце - большие;
 // возвращает место начала блока элементов, больших pivot;
 int * partition(int * left, int *  right, int pivot) {
-	int * store = right; // место для вставки элементов, меньших pivot
 	while(true){
 		while (*left<pivot)
 			left++;
@@ -23,10 +22,6 @@ int * partition(int * left, int *  right, int pivot) {
 			return right;
 		}
 	}
-	/*for (int * p = left; p != right; ++p)
-		if (*p < pivot)
-			swap(*p, *store++);
-	return store;*/
 }
  
 void my_qsort(int * arr, int n) {
